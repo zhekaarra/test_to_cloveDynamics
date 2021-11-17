@@ -86,14 +86,14 @@ class PostService {
     async update(post){
 
         if (!post._id) {
-            throw new  Error('Id не указан');
+            throw new  Error('ID not specified');
         }
         const updatedPost = await Post.findByIdAndUpdate(post._id, post, {new: true});
         return updatedPost;
     };
     async delete(id){
         if (!id) {
-            throw new  Error('Id не указан');
+            throw new  Error('ID not specified');
         }
         const post = await Post.findByIdAndDelete(id);
         return post;
