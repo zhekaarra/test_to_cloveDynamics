@@ -68,16 +68,7 @@ class PostController{
             res.status(500).json(e);
         }
     };
-    async update(req,res){
-        try {
-            const updatedPost = await PostService.update(req.body);
-            return res.json(updatedPost);
 
-        }catch (e){
-            res.status(500).json(e.message);
-        }
-
-    }
     async delete(req,res){
         try {
             const post = await PostService.delete(req.params.id);
